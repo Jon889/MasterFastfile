@@ -160,8 +160,7 @@ def _get_team_id
 end
 
 def _upload_to_hockey
-  custom_notes = ENV['TAB_HOCKEY_RELEASE_NOTES'] || ''
-  notes = custom_notes == '' ? _create_change_log : custom_notes
+  notes = ENV['TAB_HOCKEY_RELEASE_NOTES'] || _create_change_log
   hockey(notes_type: '0', notes: notes, bypass_cdn: true)
 end
 
